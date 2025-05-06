@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReGreen - Giriş Yap</title>
+    <link rel="stylesheet" href="style-signin.css"> <!-- Giriş için ayrı CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="signin.css">
+    <script src="signin.js"></script>
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-box">
+            <div class="logo-container">
+                <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>Geometrik Yaprak Logosu</title>
+                     <!-- Sol Parça -->
+                     <path d="M50 90 L20 60 L20 30 L50 10 L50 90 Z" fill="#166534"/>
+                     <!-- Sağ Üst Parça -->
+                     <path d="M50 10 L80 30 L80 60 L50 50 L50 10 Z" fill="#22c55e"/>
+                     <!-- Sağ Alt Parça -->
+                     <path d="M50 50 L80 60 L80 90 L50 90 L50 50 Z" fill="#4CAF50"/>
+                   </svg>
+                <span>ReGreen</span>
+            </div>
+            <h2>Giriş Yapın</h2>
+            <form id="signin-form">
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+                 <div class="form-group forgot-password-link">
+                    <a href="#">Şifrenizi mi unuttunuz?</a>
+                </div>
+                 <div id="message" class="message"></div>
+                <button type="submit" class="btn btn-solid">Giriş Yap</button>
+            </form>
+            <p class="signup-link">
+                Hesabınız yok mu? <a href="signup.html">Kayıt Olun</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script-signin.js"></script> <!-- Giriş için ayrı JS -->
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* analysis.css */
+
+/* Genel Sıfırlama ve Temel Ayarlar */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #fafffa; color: #14532d; line-height: 1.6; min-height: 100vh; }
+.result-page-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
+
+/* Header Stilleri (Aynı) */
+header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid #e5f8ed; margin-bottom: 40px; }
+.logo { display: flex; align-items: center; }
+.logo svg { height: 45px; width: auto; display: block; margin-right: 10px; }
+.logo span { font-size: 1.8em; font-weight: 600; color: #166534; vertical-align: middle; }
+nav { display: flex; align-items: center; }
+.nav-link { margin-right: 25px; font-weight: 500; color: #166534; transition: color 0.3s ease; }
+.nav-link:hover { color: #15803d; }
+
+/* Düğme Stilleri (Aynı) */
+.btn { padding: 10px 25px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.1s ease; border: 1px solid transparent; font-size: 0.95em; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn:active { transform: scale(0.97); }
+.btn-outline { border: 1.5px solid #166534; color: #166534; background-color: transparent; }
+.btn-outline:hover { background-color: #dcfce7; }
+.btn-upload { background-color: #166534; color: white; border: none; margin-top: 30px; }
+.btn-upload:hover { background-color: #15803d; }
+
+/* Ana İçerik Alanı */
+.result-content { text-align: center; padding: 20px 0 50px 0; }
+.result-content h2 { font-size: 2.2em; font-weight: 600; margin-bottom: 30px; color: #14532d; }
+
+/* Sonuç Kutusu */
+.analysis-details-box { background-color: #ffffff; border: 1px solid #dcfce7; border-radius: 16px; padding: 30px 40px; max-width: 700px; margin: 0 auto 30px auto; box-shadow: 0 8px 25px rgba(187, 247, 208, 0.3); text-align: left; }
+
+/* Yükleniyor / Hata Mesajı */
+.message { padding: 15px; border-radius: 6px; font-size: 1em; text-align: center; margin-bottom: 20px; }
+.message.error { background-color: #fecaca; color: #b91c1c; }
+.message.info { background-color: #e0f2fe; color: #075985; }
+.message i { margin-right: 8px; }
+
+/* Sonuç Bölümleri */
+.result-section { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #dcfce7; }
+.result-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.result-section h3 { font-size: 1.3em; color: #15803d; margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.result-section h3 i { color: #16a34a; }
+.result-section p { margin: 8px 0; color: #14532d; font-size: 1.05em; line-height: 1.7; }
+.result-section strong, .result-section #primary-label, .result-section #product-name { font-weight: 600; color: #166534; }
+
+/* Barkod Bilgisi Alanı */
+.barcode-info p { margin: 5px 0; } /* Biraz daha sıkışık */
+#barcode-data {
+    font-family: 'Courier New', Courier, monospace; /* Barkod fontu */
+    font-size: 1.1em;
+    background-color: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Ham Etiket Listesi Stilleri (Şimdilik Yorumlu) */
+/*
+.raw-labels { ... }
+.raw-labels h4 { ... }
+#raw-label-list { ... }
+#raw-label-list li { ... }
+*/
+
+/* Duyarlılık (Aynı kalabilir) */
+@media (max-width: 768px) { /* ... */ }
+@media (max-width: 480px) { /* ... */ }

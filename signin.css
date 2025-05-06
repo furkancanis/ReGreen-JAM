@@ -1,0 +1,211 @@
+/* style-signin.css */
+
+/* Genel Sıfırlama ve Temel Ayarlar (signup.css ile aynı) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0fdf4;
+    color: #14532d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Giriş Kutusu Kapsayıcısı */
+.signin-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Giriş Kutusu (signup.css'deki .signup-box ile aynı stil) */
+.signin-box {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #dcfce7;
+}
+
+/* Logo Alanı (signup.css ile aynı) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #166534;
+}
+
+.logo-container svg {
+    margin-right: 10px;
+}
+
+/* Başlık (signup.css ile aynı) */
+.signin-box h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #14532d;
+}
+
+/* Form Grupları (signup.css ile aynı) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #166534;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-right: 40px; /* Şifre gözü için */
+}
+.form-group input:not([type="password"]) {
+     padding-right: 15px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Şifre Göster/Gizle İkonu (signup.css ile aynı) */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 68%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #86efac;
+    transition: color 0.2s ease;
+}
+.toggle-password:hover {
+    color: #22c55e;
+}
+
+/* Şifremi Unuttum Bağlantısı */
+.forgot-password-link {
+    text-align: right;
+    margin-top: -10px; /* Şifre alanına biraz yakın */
+    margin-bottom: 20px;
+    font-size: 0.85em;
+}
+
+.forgot-password-link a {
+    color: #16a34a;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mesaj Alanı (signup.css ile aynı) */
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    text-align: center;
+    display: none;
+}
+.message.error {
+    background-color: #fecaca;
+    color: #b91c1c;
+    display: block;
+}
+.message.success {
+    background-color: #dcfce7;
+    color: #15803d;
+    display: block;
+}
+
+
+/* Düğme Stili (signup.css ile aynı) */
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+    font-size: 1.05em;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-solid {
+    background-color: #166534;
+    color: #ffffff;
+}
+
+.btn-solid:hover {
+    background-color: #15803d;
+}
+.btn-solid:active {
+     transform: scale(0.98);
+}
+
+/* Kayıt Ol Bağlantısı */
+.signup-link {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #16a34a;
+}
+
+.signup-link a {
+    color: #15803d;
+    font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Duyarlılık (signup.css ile aynı) */
+@media (max-width: 480px) {
+    .signin-box {
+        padding: 30px 20px;
+    }
+    .signin-box h2 {
+        font-size: 1.6em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .logo-container {
+        font-size: 1.4em;
+    }
+}

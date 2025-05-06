@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReGreen - Barkod Okut</title> <!-- Başlık Güncellendi -->
+    <link rel="stylesheet" href="started.css"> <!-- Sadece bu CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="started.css">
+    <link rel="stylesheet" href="started.js">
+</head>
+<body>
+    <!-- Ana kapsayıcı için sınıf adı isteğe bağlı olarak değiştirilebilir -->
+    <div class="scan-page-container">
+        <header>
+             <div class="logo">
+                <!-- Logo SVG -->
+                <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <title>Geometrik Yaprak Logosu</title> <path d="M50 90 L20 60 L20 30 L50 10 L50 90 Z" fill="#166534"/> <path d="M50 10 L80 30 L80 60 L50 50 L50 10 Z" fill="#22c55e"/> <path d="M50 50 L80 60 L80 90 L50 90 L50 50 Z" fill="#4CAF50"/> </svg>
+                <span>ReGreen</span>
+            </div>
+            <nav>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </nav>
+        </header>
+
+        <main class="scan-content"> <!-- Sınıf adı güncellendi -->
+            <h2>Ürün Barkodunu Okut</h2> <!-- Başlık Güncellendi -->
+            <p>Ürünün çevre dostu alternatiflerini ve etkisini öğrenmek için barkod içeren bir görsel yükleyin veya kamerayla okutun.</p> <!-- Açıklama Güncellendi -->
+
+            <!-- Barkod Okuma Alanı -->
+            <div class="scan-area" id="scan-area"> <!-- Sınıf ve ID güncellendi -->
+                <!-- Görsel yükleme için gizli input -->
+                <input type="file" id="barcode-image-input" accept="image/*" style="display: none;"> <!-- ID güncellendi -->
+                <!-- Kamera için elementler -->
+                <video id="camera-preview" autoplay playsinline style="display: none; max-width: 100%; border-radius: 8px;"></video>
+                <canvas id="camera-canvas" style="display: none;"></canvas>
+
+                <!-- Placeholder Alanı -->
+                <div class="scan-placeholder"> <!-- Sınıf güncellendi -->
+                    <i class="fas fa-barcode fa-4x"></i> <!-- İkon barkod olarak değişti -->
+                    <p class="scan-text">Barkodlu görseli buraya sürükleyin, seçmek için tıklayın veya kamera ile okutun</p> <!-- Metin güncellendi -->
+                    <span id="file-name-display" class="file-name"></span>
+                </div>
+                 <!-- Buton Grubu -->
+                <div class="button-group">
+                    <!-- ID ve metin güncellendi -->
+                    <button id="select-barcode-button" class="btn btn-select">
+                        <i class="fas fa-image"></i> Barkodlu Resim Seç
+                    </button>
+                    <!-- Metin güncellendi -->
+                    <button id="camera-button" class="btn btn-camera">
+                        <i class="fas fa-camera"></i> Kamera ile Okut
+                    </button>
+                     <!-- Metin güncellendi -->
+                    <button id="capture-button" class="btn btn-capture" style="display: none;">
+                         <i class="fas fa-circle-stop"></i> Okut
+                    </button>
+                </div>
+                 <!-- Mesaj alanı ID güncellendi -->
+                <div id="scan-message" class="message"></div>
+            </div>
+
+            <!-- SONUÇ GÖSTERME ALANI BU SAYFADAN KALDIRILDI -->
+
+             <!-- Son Görüntülenenler (Aynı kalabilir) -->
+            <section class="recent-items">
+                <h3>Son Görüntülenenler</h3>
+                <div class="product-list">
+                     <div class="product-card"> <img src="https://via.placeholder.com/100x100.png?text=Urun+1" alt="Örnek Ürün 1"> <h4>Organik Pamuk Tişört</h4> <p>Düşük su tüketimi</p> <div class="rating">4.8 <i class="fas fa-star"></i></div> </div>
+                     <div class="product-card"> <img src="https://via.placeholder.com/100x100.png?text=Urun+2" alt="Örnek Ürün 2"> <h4>Bambu Diş Fırçası</h4> <p>Plastiksiz alternatif</p> <div class="rating">4.5 <i class="fas fa-star"></i></div> </div>
+                     <div class="product-card"> <img src="https://via.placeholder.com/100x100.png?text=Urun+3" alt="Örnek Ürün 3"> <h4>Cam Saklama Kabı</h4> <p>Tekrar kullanılabilir</p> <div class="rating">4.7 <i class="fas fa-star"></i></div> </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Doğru JS dosyası -->
+    <script src="started.js"></script>
+</body>
+</html>

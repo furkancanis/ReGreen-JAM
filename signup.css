@@ -1,0 +1,192 @@
+/* Genel Sıfırlama ve Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0fdf4; /* Ana sayfadaki gibi açık yeşil arka plan */
+    color: #14532d; /* Koyu yeşil metin */
+    display: flex; /* İçeriği ortalamak için */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Tüm ekran yüksekliğini kapla */
+    padding: 20px; /* Kenarlardan boşluk */
+}
+
+/* Kayıt Kutusu Kapsayıcısı */
+.signup-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Kayıt Kutusu */
+.signup-box {
+    background-color: #ffffff; /* Beyaz form arka planı */
+    padding: 40px 30px;
+    border-radius: 12px; /* Yuvarlak köşeler */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    max-width: 450px; /* Maksimum genişlik */
+    width: 100%;
+    text-align: center; /* İçeriği ortala */
+    border: 1px solid #dcfce7; /* Çok ince yeşil çerçeve */
+}
+
+/* Logo Alanı */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Logoyu ortala */
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #166534;
+}
+
+.logo-container svg {
+    margin-right: 10px;
+}
+
+/* Başlık */
+.signup-box h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #14532d;
+}
+
+/* Form Grupları (Etiket + Giriş) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Etiketleri sola hizala */
+    position: relative; /* Şifre gözü ikonu için */
+}
+
+.form-group label {
+    display: block; /* Etiketi ayrı satıra al */
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #166534;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #bbf7d0; /* Açık yeşil çerçeve */
+    border-radius: 8px; /* Yuvarlak köşeler */
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-right: 40px; /* Şifre gözü ikonu için yer */
+}
+/* Şifre olmayan inputlar için sağ padding'i kaldır */
+.form-group input:not([type="password"]) {
+     padding-right: 15px;
+}
+
+
+.form-group input:focus {
+    outline: none;
+    border-color: #22c55e; /* Odaklanınca daha belirgin yeşil */
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2); /* Odak efekti */
+}
+
+/* Şifre Göster/Gizle İkonu */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 68%; /* Dikey olarak ortala (etiket yüksekliğini hesaba kat) */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #86efac; /* İkon rengi */
+    transition: color 0.2s ease;
+}
+.toggle-password:hover {
+    color: #22c55e;
+}
+
+/* Mesaj Alanı (Hata/Başarı) */
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    text-align: center;
+    display: none; /* Başlangıçta gizli */
+}
+.message.error {
+    background-color: #fecaca; /* Kırmızımsı arka plan */
+    color: #b91c1c; /* Koyu kırmızı yazı */
+    display: block; /* Hata varsa göster */
+}
+.message.success {
+    background-color: #dcfce7; /* Yeşilimsi arka plan */
+    color: #15803d; /* Koyu yeşil yazı */
+    display: block; /* Başarı varsa göster */
+}
+
+
+/* Düğme Stili */
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+    font-size: 1.05em;
+    width: 100%; /* Tam genişlik */
+    margin-top: 10px; /* Üstten biraz boşluk */
+}
+
+.btn-solid {
+    background-color: #166534; /* Koyu yeşil */
+    color: #ffffff;
+}
+
+.btn-solid:hover {
+    background-color: #15803d; /* Biraz daha açık koyu yeşil */
+}
+.btn-solid:active {
+     transform: scale(0.98); /* Tıklama efekti */
+}
+
+/* Giriş Yap Bağlantısı */
+.login-link {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #16a34a; /* Orta ton yeşil */
+}
+
+.login-link a {
+    color: #15803d; /* Daha koyu yeşil */
+    font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Duyarlılık (Basit) */
+@media (max-width: 480px) {
+    .signup-box {
+        padding: 30px 20px;
+    }
+    .signup-box h2 {
+        font-size: 1.6em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .logo-container {
+        font-size: 1.4em;
+    }
+}

@@ -1,0 +1,142 @@
+/* started.css (Barkod odaklı) */
+
+/* Genel Sıfırlama ve Temel Ayarlar */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #fafffa; color: #14532d; line-height: 1.6; min-height: 100vh; }
+/* Scan page container (opsiyonel sınıf değişikliği) */
+.scan-page-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
+
+/* Header Stilleri (Aynı) */
+header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid #e5f8ed; margin-bottom: 40px; }
+.logo { display: flex; align-items: center; }
+.logo svg { height: 45px; width: auto; display: block; margin-right: 10px; }
+.logo span { font-size: 1.8em; font-weight: 600; color: #166534; vertical-align: middle; }
+nav { display: flex; align-items: center; }
+.nav-link { margin-right: 25px; font-weight: 500; color: #166534; transition: color 0.3s ease; }
+.nav-link:hover { color: #15803d; }
+
+/* Düğme Stilleri (Aynı) */
+.btn { padding: 10px 25px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.1s ease; border: 1px solid transparent; font-size: 0.95em; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn:active { transform: scale(0.97); }
+.btn-outline { border: 1.5px solid #166534; color: #166534; background-color: transparent; }
+.btn-outline:hover { background-color: #dcfce7; }
+.btn-solid { background-color: #166534; color: #ffffff; border: none; }
+.btn-solid:hover { background-color: #15803d; }
+
+/* Ana İçerik Alanı */
+.scan-content { /* Sınıf güncellendi */
+    text-align: center;
+    padding: 20px 0 50px 0;
+}
+.scan-content h2 { font-size: 2.2em; font-weight: 600; margin-bottom: 10px; color: #14532d; }
+.scan-content > p { font-size: 1.1em; margin-bottom: 40px; color: #166534; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Barkod Tarama Alanı Kutusu */
+.scan-area { /* Sınıf güncellendi */
+    background-color: #ffffff;
+    border: 1px solid #dcfce7;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 550px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 8px 25px rgba(187, 247, 208, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Placeholder Alanı */
+.scan-placeholder { /* Sınıf güncellendi */
+    border: 3px dashed #bbf7d0;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #16a34a;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+.scan-placeholder.highlight { background-color: #eefbf3; border-color: #4CAF50; }
+
+.scan-placeholder i { /* Barkod ikonu */
+    font-size: 4em; /* Barkod ikonu boyutu */
+    color: #86efac; /* Renk */
+    margin-bottom: 20px;
+}
+
+.scan-placeholder .scan-text { /* Metin */
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #166534;
+    max-width: 80%;
+}
+
+.scan-placeholder .file-name { /* Dosya adı (Aynı) */
+    font-size: 0.85em; color: #15803d; font-style: italic; display: block; margin-top: 5px; word-break: break-all;
+}
+
+/* Buton Grubu (Aynı) */
+.button-group { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; width: 100%; }
+
+/* Butonlar */
+.btn-select, .btn-camera, .btn-capture { /* ID'lere göre sınıflar güncellendi */
+    background-color: #166534; color: white; border: none; font-size: 1em; padding: 12px 25px; flex-grow: 1; min-width: 160px;
+}
+.btn-select:hover, .btn-camera:hover, .btn-capture:hover { background-color: #15803d; }
+.btn-capture { background-color: #dc3545; }
+.btn-capture:hover { background-color: #c82333; }
+
+/* Kamera Önizleme (Aynı) */
+#camera-preview { display: none; max-width: 100%; border-radius: 8px; margin-bottom: 15px; border: 1px solid #dcfce7; }
+
+/* Mesaj Alanı */
+.message { /* ID #scan-message oldu HTML'de */
+    margin-top: 25px; padding: 10px 15px; border-radius: 6px; font-size: 0.9em; text-align: center; display: none; width: 100%;
+}
+.message.error { background-color: #fecaca; color: #b91c1c; display: block; }
+.message.success { background-color: #dcfce7; color: #15803d; display: block; }
+.message.loading { background-color: #e0f2fe; color: #075985; display: block; }
+.message.info { background-color: #e0f2fe; color: #075985; display: block; }
+
+/* SONUÇ ALANI STİLLERİ KALDIRILDI */
+
+/* Son Görüntülenenler Bölümü (Aynı) */
+.recent-items { margin-top: 60px; padding-top: 40px; border-top: 1px solid #e5f8ed; }
+.recent-items h3 { font-size: 1.6em; margin-bottom: 30px; text-align: center; color: #166534; font-weight: 600; }
+.product-list { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.product-card { background-color: #ffffff; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); width: 220px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.product-card:hover{ transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+.product-card img { width: 100px; height: 100px; object-fit: cover; margin-bottom: 15px; border-radius: 8px; }
+.product-card h4 { font-size: 1.05em; font-weight: 600; margin-bottom: 8px; color: #14532d; min-height: 2.4em; line-height: 1.2; }
+.product-card p { font-size: 0.9em; color: #16a34a; margin-bottom: 12px; min-height: 2.7em; line-height: 1.5; }
+.product-card .rating { font-size: 0.95em; font-weight: 600; color: #15803d; }
+.product-card .rating i { color: #facc15; margin-left: 4px; vertical-align: middle; }
+
+/* Duyarlılık (Aynı, sınıf adları güncellendi) */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    .scan-content h2 { font-size: 1.8em; }
+    .scan-content > p { font-size: 1em; margin-bottom: 30px; }
+    .scan-area { padding: 30px; max-width: 90%; }
+    .scan-placeholder { min-height: 180px; }
+    .button-group { flex-direction: column; }
+    .btn-select, .btn-camera, .btn-capture { width: 100%; }
+    .product-card { width: calc(50% - 15px); }
+}
+@media (max-width: 480px) {
+     .scan-content h2 { font-size: 1.6em; }
+     .scan-area { padding: 20px; }
+     .scan-placeholder { min-height: 150px; }
+     .scan-placeholder i { font-size: 3em; }
+     .product-list { gap: 15px; }
+     .product-card { width: calc(85% - 10px); margin: 0 auto; }
+     .recent-items h3 { font-size: 1.3em; }
+}

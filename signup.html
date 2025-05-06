@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReGreen - Kayıt Ol</title>
+    <link rel="stylesheet" href="style-signup.css"> <!-- Ayrı CSS Dosyası -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- İkonlar için Font Awesome (Opsiyonel) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="signup.css">
+    <script src="signup.js"></script>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <div class="logo-container">
+                 <!-- Ana sayfadaki logo SVG'si veya benzeri -->
+                 <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>Geometrik Yaprak Logosu</title>
+                     <!-- Sol Parça -->
+                     <path d="M50 90 L20 60 L20 30 L50 10 L50 90 Z" fill="#166534"/>
+                     <!-- Sağ Üst Parça -->
+                     <path d="M50 10 L80 30 L80 60 L50 50 L50 10 Z" fill="#22c55e"/>
+                     <!-- Sağ Alt Parça -->
+                     <path d="M50 50 L80 60 L80 90 L50 90 L50 50 Z" fill="#4CAF50"/>
+                   </svg>
+                <span>ReGreen</span>
+            </div>
+            <h2>Hesabınızı Oluşturun</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Tam Adınız</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Şifreyi Onayla</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                     <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password', this)">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+                 <div id="message" class="message"></div> <!-- Hata/Başarı mesajları için alan -->
+                <button type="submit" class="btn btn-solid">Kayıt Ol</button>
+            </form>
+            <p class="login-link">
+                Zaten bir hesabınız var mı? <a href="signin.html">Giriş Yapın</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script-signup.js"></script> <!-- Ayrı JS Dosyası -->
+</body>
+</html>
